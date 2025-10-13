@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using NUnit.Framework;
+using System.Data;
 using Week_4_PDF_downloader;
 
 namespace PdfDownloader.Tests {
@@ -14,8 +15,9 @@ namespace PdfDownloader.Tests {
 
         [Test]
         public void Test1() {
-            DataTable dataFromFile = new DataTable();
-            FileHandler fileHandler = new FileHandler();
+            FileHandler fileHandler = new FileHandler("../../../../CSV files");
+            fileHandler.readTableFromCsvFileWithHeaders(0, ';');
+            DataTable dataFromFile = fileHandler.getTable();
         }
     }
 }

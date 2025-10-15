@@ -1,10 +1,8 @@
-﻿using NUnit.Framework;
 using System.Data;
 using Week_4_PDF_downloader;
 
 namespace PdfDownloader.Tests {
-
-    internal class IntegrationTests {
+    public class IntegrationTest {
         [SetUp]
         public void Setup() {
         }

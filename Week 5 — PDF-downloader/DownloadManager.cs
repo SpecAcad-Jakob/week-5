@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace Week_4_PDF_downloader {
-    internal class DownloadManager {
+    public class DownloadManager {
         //  Constants
         private static String DEFAULT_DOWNLOAD_LOCATION = "../../../../Downloads";
 
@@ -70,7 +70,7 @@ namespace Week_4_PDF_downloader {
             //  look into. Somehow httpResponseMessage can remain null after GetAsync()?
             try {   //  Try download file
                 httpResponseMessage = await httpClient.GetAsync(tableRow[urlIndex].ToString());
-                contentTypeIndexInAllowedTypes = allowedTypes.IndexOf(httpResponseMessage.Content.Headers.ContentType.ToString());
+                contentTypeIndexInAllowedTypes = AllowedTypes.IndexOf(httpResponseMessage.Content.Headers.ContentType.ToString());
                 isSuccess = true;
             } catch (InvalidOperationException exception) {
                 //  Do nothing
@@ -88,7 +88,7 @@ namespace Week_4_PDF_downloader {
             if (!isSuccess) {
                 try {   //  Try download file via fallback URL
                     httpResponseMessage = await httpClient.GetAsync(tableRow[fallbackUrlIndex].ToString());
-                    contentTypeIndexInAllowedTypes = allowedTypes.IndexOf(httpResponseMessage.Content.Headers.ContentType.ToString());
+                    contentTypeIndexInAllowedTypes = AllowedTypes.IndexOf(httpResponseMessage.Content.Headers.ContentType.ToString());
                     isSuccess = true;
                 } catch (InvalidOperationException exception) {
                     //  Do nothing

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week 4 — PDF-downloader", "Week 4 — PDF-downloader.csproj", "{9658C59C-D17A-4C72-BA30-1DBA1E47F9FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfDownloader.Tests", "..\PdfDownloader.Tests\PdfDownloader.Tests.csproj", "{E66F914C-2B97-4011-B0B3-7DFBDEF31874}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9658C59C-D17A-4C72-BA30-1DBA1E47F9FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9658C59C-D17A-4C72-BA30-1DBA1E47F9FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9658C59C-D17A-4C72-BA30-1DBA1E47F9FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E66F914C-2B97-4011-B0B3-7DFBDEF31874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E66F914C-2B97-4011-B0B3-7DFBDEF31874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E66F914C-2B97-4011-B0B3-7DFBDEF31874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E66F914C-2B97-4011-B0B3-7DFBDEF31874}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -96,6 +96,8 @@ namespace Week_4_PDF_downloader {   //  Version 2.0
 
                         j++;
                     }
+
+                    dataTable.Rows.Add(dataRow);
                 }
 
                 i++;
@@ -228,6 +230,7 @@ namespace Week_4_PDF_downloader {   //  Version 2.0
                 dataRow = dataTable.NewRow();
 
                 //  Iterate over columns
+                int j = 0;
                 foreach (IXLColumn excelColumn in worksheet.Columns()) {
                     //  If first row (header), create columns. Fill data regardless
                     if (i == 1) {
@@ -237,7 +240,8 @@ namespace Week_4_PDF_downloader {   //  Version 2.0
                         dataTable.Columns.Add(dataColumn);
                     }
 
-                    dataRow[excelColumn.Cell(1).GetString()] = excelColumn.Cell(i).GetString();
+                    dataRow[j] = excelColumn.Cell(i).GetString();
+                    j++;
                 }
 
                 dataTable.Rows.Add(dataRow);

@@ -18,11 +18,12 @@ namespace PdfDownloader.Tests {
         }
 
         [Test]
-        public async Task Test1() {
+        public async Task testDownloadAndSaveFromCsvData() {
             FileHandler fileHandler = new FileHandler("../../../../Test CSV files");
             fileHandler.readTableFromCsvFileWithHeaders(0, ';');
             DataTable dataFromFile = fileHandler.getTable();
             DownloadManager downloadManager = new DownloadManager("../../../../Downloads");
+            Assert.That(dataFromFile.Rows.Count != 0);
             foreach (DataRow row in dataFromFile.Rows) {
                 await downloadManager.tryDownloadAsync(row, 0, 1, 1);
                 bool doesFileExist = File.Exists($"../../../../Downloads/{row[0]}.pdf");

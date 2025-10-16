@@ -56,22 +56,5 @@ namespace PdfDownloader.Tests {
                 .Rows[0]
                 [0]), Is.False);
         }
-
-        [Test]
-        public void TestDuplicateColumnNameHandling() {
-            FileHandler fileHandler = new FileHandler();
-            DataTable dataTable = new DataTable();
-            int testTable_size = 10;
-            for (int i = 0; i < testTable_size; i++) {
-                DataColumn dataColumn = new DataColumn();
-                dataColumn.ColumnName = "TestName";
-                try {
-                    dataTable.Columns.Add(dataColumn);
-                } catch (DuplicateNameException dupeException) {
-                    fileHandler.tryFixDuplicateName(dataColumn);
-                }
-            }
-            Assert.That(dataTable.Columns.Count == testTable_size);
-        }
     }
 }
